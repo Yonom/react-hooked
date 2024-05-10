@@ -3,7 +3,7 @@ import { describe, expect, jest, test } from "@jest/globals";
 import { merge, of, throwError } from "rxjs";
 
 import { getQueryKey } from "../../__tests__/test-utils";
-import { Query } from "../../types";
+import type { Query } from "../../types";
 import resetQuery from "../resetQuery";
 import { subscribeToQuery } from "../subscribeToQuery";
 

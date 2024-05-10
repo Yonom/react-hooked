@@ -8,7 +8,7 @@ import {
 } from "./test-utils";
 import { QueryBehaviorSubject } from "../QueryBehaviorSubject";
 import QueryResultFactory from "../QueryResultFactory";
-import { COMPLETE_TOKEN, QueryResult, RESET_TOKEN } from "../types";
+import { COMPLETE_TOKEN, type QueryResult, RESET_TOKEN } from "../types";
 
 describe("QueryBehaviorSubject", () => {
   const initializeResult = (subject: QueryBehaviorSubject<string>) => {

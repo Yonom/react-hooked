@@ -4,7 +4,7 @@ class QueryLifecycleManager {
   private _idleRetainExpiresAt = 0;
 
   private _disposeTimeoutId: NodeJS.Timeout | undefined;
-  private _disposeAt = Infinity;
+  private _disposeAt = Number.POSITIVE_INFINITY;
   private _isDisposed = false;
 
   private readonly _teardownCallbacks: (() => void)[] = [];
@@ -46,7 +46,7 @@ class QueryLifecycleManager {
 
   private _updateTimeout() {
     const maxExpiresAt = Math.max(
-      this._permanentRetainCount > 0 ? Infinity : 0,
+      this._permanentRetainCount > 0 ? Number.POSITIVE_INFINITY : 0,
       this._idleRetainExpiresAt,
       this._temporaryRetainExpiresAt,
     );
@@ -59,7 +59,7 @@ class QueryLifecycleManager {
     clearTimeout(this._disposeTimeoutId);
     this._disposeTimeoutId = undefined;
 
-    if (this._disposeAt !== Infinity) {
+    if (this._disposeAt !== Number.POSITIVE_INFINITY) {
       const expiresAfterMs = Math.max(
         0,
         this._disposeAt - new Date().getTime(),

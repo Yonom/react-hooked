@@ -1,13 +1,13 @@
 import { useMemo } from "react";
 
-import QueryReference from "../QueryReference";
+import type QueryReference from "../QueryReference";
 import QueryStore from "../QueryStore";
 import {
   runMountEffects,
   runUnmountedReadEffects,
   runUnsubscribeEffects,
 } from "../queryEffects";
-import { Query, QueryResult } from "../types";
+import type { Query, QueryResult } from "../types";
 
 type QueryHookState<T> = {
   readonly subscribe: (callback: () => void) => () => void;
@@ -22,7 +22,7 @@ type InternalQueryHookState<T> = QueryHookState<T> & {
 
 const ensureRefUndisposed = <T>(state: InternalQueryHookState<T>) => {
   if (state.ref.isDisposed) {
-    (state as any).ref = QueryStore.getOrCreate(state.query);
+    state.ref = QueryStore.getOrCreate(state.query);
   }
 };
 

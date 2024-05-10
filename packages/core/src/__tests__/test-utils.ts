@@ -1,6 +1,6 @@
 import { expect } from "@jest/globals";
 
-import { QueryResult } from "../types";
+import type { QueryResult } from "../types";
 
 export const expectPendingResult = <T>(result: QueryResult<T>) => {
   expect(result.status).toBe("pending");

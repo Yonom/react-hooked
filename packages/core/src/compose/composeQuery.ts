@@ -1,8 +1,8 @@
 import { Observable } from "rxjs";
 
-import QueryReference from "../QueryReference";
+import type QueryReference from "../QueryReference";
 import QueryStore from "../QueryStore";
-import { COMPLETE_TOKEN, Query } from "../types";
+import { COMPLETE_TOKEN, type Query } from "../types";
 
 type ComposeReadFunction = <T>(q: Query<T>) => Promise<T>;
 

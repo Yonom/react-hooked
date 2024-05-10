@@ -14,7 +14,8 @@
         "noNonNullAssertion": "off"
       },
       "complexity": {
-        "useLiteralKeys": "off"
+        "useLiteralKeys": "off",
+        "noForEach": "off"
       },
       "nursery": {
         "useSortedClasses": "warn"

@@ -1,6 +1,6 @@
 import QueryStore from "../QueryStore";
 import { runReadEffects } from "../queryEffects";
-import { Query } from "../types";
+import type { Query } from "../types";
 
 const readQuery = <T>(query: Query<T>) => {
   const ref = QueryStore.getOrCreate(query);

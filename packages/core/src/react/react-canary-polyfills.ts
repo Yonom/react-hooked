@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { QueryResult } from "../types";
+import type { QueryResult } from "../types";
 
 const polyfill_use = <T>(promise: QueryResult<T>): T => {
   switch (promise.status) {

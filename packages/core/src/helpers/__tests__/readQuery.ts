@@ -5,12 +5,12 @@ import {
   expectFullfilledResult,
   getQueryKey,
 } from "../../__tests__/test-utils";
-import { Query } from "../../types";
+import type { Query } from "../../types";
 import readQuery from "../readQuery";
 
 const testQuery = (name: string) =>
   ({
-    key: getQueryKey() + " " + name,
+    key: `${getQueryKey()} ${name}`,
     observable: of("test"),
   }) satisfies Query<string>;
 
@@ -19,7 +19,7 @@ jest.useFakeTimers();
 describe("readQuery", () => {
   test("read from multiple sync value", async () => {
     const value = await readQuery({
-      key: getQueryKey() + " sync",
+      key: `${getQueryKey()} sync`,
       observable: from([1, 2, 3]),
     });
 

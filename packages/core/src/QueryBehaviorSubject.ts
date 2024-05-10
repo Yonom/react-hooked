@@ -1,13 +1,13 @@
-import { Observer, Unsubscribable } from "rxjs";
+import type { Observer, Unsubscribable } from "rxjs";
 
 import QueryResultFactory from "./QueryResultFactory";
 import { QueryCompletedWithoutValueError } from "./errors";
 import {
   COMPLETE_TOKEN,
-  QueryNotification,
-  QueryObservable,
-  QueryResult,
-  QuerySubscriber,
+  type QueryNotification,
+  type QueryObservable,
+  type QueryResult,
+  type QuerySubscriber,
   RESET_TOKEN,
 } from "./types";
 
@@ -122,7 +122,8 @@ export class QueryBehaviorSubject<T> implements Observer<T> {
       notification = this.result;
     }
 
-    let result;
+    let result: IteratorResult<QuerySubscriber<T>> | undefined;
+    // biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
     while ((result = this.currentIterator?.next()) && !result.done) {
       try {
         result.value(notification);

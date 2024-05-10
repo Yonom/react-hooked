@@ -8,8 +8,8 @@ import {
 import QueryResultFactory from "../QueryResultFactory";
 import {
   COMPLETE_TOKEN,
-  QueryNotification,
-  QuerySubscriber,
+  type QueryNotification,
+  type QuerySubscriber,
   RESET_TOKEN,
 } from "../types";
 

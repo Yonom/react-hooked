@@ -1,11 +1,11 @@
 import { QueryCompletedWithoutValueError, QueryResetError } from "./errors";
 import {
   COMPLETE_TOKEN,
-  FulfilledQueryResult,
-  QueryResult,
-  QuerySubscriber,
+  type FulfilledQueryResult,
+  type QueryResult,
+  type QuerySubscriber,
   RESET_TOKEN,
-  RejectedQueryResult,
+  type RejectedQueryResult,
 } from "./types";
 
 type QuerySubscribable<T> = {

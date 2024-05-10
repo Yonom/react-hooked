@@ -10,7 +10,7 @@ import {
   expectRejectedResult,
 } from "../../__tests__/test-utils";
 import resetQuery from "../../helpers/resetQuery";
-import { Query } from "../../types";
+import type { Query } from "../../types";
 import useQueryHookState from "../useQueryHookState";
 
 jest.useFakeTimers();
@@ -191,11 +191,11 @@ describe("useQueryHookState", () => {
 
   test("switch query", async () => {
     const query1 = {
-      key: getQueryKey() + " 1",
+      key: `${getQueryKey()} 1`,
       observable: of("test"),
     } satisfies Query<string>;
     const query2 = {
-      key: getQueryKey() + " 2",
+      key: `${getQueryKey()} 2`,
       observable: of("test2"),
     } satisfies Query<string>;
 

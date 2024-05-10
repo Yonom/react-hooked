@@ -1,8 +1,8 @@
-import { Observer } from "rxjs";
+import type { Observer } from "rxjs";
 
 import QueryStore from "../QueryStore";
 import { runUnsubscribeEffects } from "../queryEffects";
-import { COMPLETE_TOKEN, Query, RESET_TOKEN } from "../types";
+import { COMPLETE_TOKEN, type Query, RESET_TOKEN } from "../types";
 
 // call on bind with most recent value?
 

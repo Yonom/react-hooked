@@ -46,8 +46,8 @@ describe("QueryLifecycleManager", () => {
   test("reset", async () => {
     const lifecycle = new QueryLifecycleManager();
 
-    lifecycle.idleRetain(Infinity);
-    lifecycle.temporaryRetain(Infinity);
+    lifecycle.idleRetain(Number.POSITIVE_INFINITY);
+    lifecycle.temporaryRetain(Number.POSITIVE_INFINITY);
     const release = lifecycle.retain();
 
     lifecycle.reset();
@@ -183,13 +183,13 @@ describe("QueryLifecycleManager", () => {
     expect(() => lifecycle.temporaryRetain(0)).toThrowError(
       "expiresAfterMs must be positive",
     );
-    expect(() => lifecycle.temporaryRetain(NaN)).toThrowError(
+    expect(() => lifecycle.temporaryRetain(Number.NaN)).toThrowError(
       "expiresAfterMs must be positive",
     );
     expect(() => lifecycle.idleRetain(0)).toThrowError(
       "expiresAfterMs must be positive",
     );
-    expect(() => lifecycle.idleRetain(NaN)).toThrowError(
+    expect(() => lifecycle.idleRetain(Number.NaN)).toThrowError(
       "expiresAfterMs must be positive",
     );
   });

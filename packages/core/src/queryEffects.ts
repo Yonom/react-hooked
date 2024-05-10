@@ -1,5 +1,5 @@
-import QueryReference from "./QueryReference";
-import { Query } from "./types";
+import type QueryReference from "./QueryReference";
+import type { Query } from "./types";
 
 const hasSettleRetainSymbol = Symbol("hasSettleRetain");
 

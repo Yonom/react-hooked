@@ -115,7 +115,7 @@ describe("QueryReference", () => {
   test("stable result ref", async () => {
     const ref = new QueryReference(EMPTY);
 
-    ref.temporaryRetain(Infinity);
+    ref.temporaryRetain(Number.POSITIVE_INFINITY);
     ref.releaseTemporaryRetain();
 
     await jest.advanceTimersByTimeAsync(0);

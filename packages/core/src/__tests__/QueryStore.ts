@@ -3,7 +3,7 @@ import { from, of } from "rxjs";
 
 import { expectFullfilledResult, getQueryKey } from "./test-utils";
 import QueryStore from "../QueryStore";
-import { Query, QueryResult } from "../types";
+import type { Query, QueryResult } from "../types";
 
 jest.useFakeTimers();
 

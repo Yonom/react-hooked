@@ -1,7 +1,7 @@
 import { QueryBehaviorSubject } from "./QueryBehaviorSubject";
 import QueryLifecycleManager from "./QueryLifecycleManager";
 import QueryResultFactory from "./QueryResultFactory";
-import { QueryObservable, QueryResult, QuerySubscriber } from "./types";
+import type { QueryObservable, QueryResult, QuerySubscriber } from "./types";
 
 export default class QueryReference<T> {
   private readonly lifecycle = new QueryLifecycleManager();

@@ -5,7 +5,7 @@ import { withErrorBoundary } from "react-error-boundary";
 import { delay, mergeMap, of, throwError, timer } from "rxjs";
 
 import { getQueryKey } from "../../__tests__/test-utils";
-import { Query } from "../../types";
+import type { Query } from "../../types";
 import useSuspenseQuery from "../useSuspenseQuery";
 
 jest.useFakeTimers();
@@ -35,7 +35,7 @@ describe("useSuspenseQuery", () => {
       ),
     } satisfies Query<string>;
 
-    let error;
+    let error: Error | undefined;
     const { result } = renderHook(() => useSuspenseQuery(testQuery), {
       wrapper: withErrorBoundary(Fragment, {
         fallback: null,
@@ -68,7 +68,7 @@ describe("useSuspenseQuery", () => {
       });
 
       useSuspenseQuery({
-        key: getQueryKey() + " suspend",
+        key: `${getQueryKey()} suspend`,
         observable: of("test").pipe(delay(1000)),
       });
 

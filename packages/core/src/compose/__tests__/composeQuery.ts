@@ -28,7 +28,7 @@ describe("composeQuery", () => {
 
   test("multiple sync", async () => {
     const subjectQuery = {
-      key: getQueryKey() + ":subject",
+      key: `${getQueryKey()}:subject`,
       observable: from([1, 2, 3]),
     };
 
@@ -49,7 +49,7 @@ describe("composeQuery", () => {
 
   test("multiple w delay", async () => {
     const innerQuery = {
-      key: getQueryKey() + ":inner",
+      key: `${getQueryKey()}:inner`,
       observable: from([1, 2, 3]).pipe(delay(0)),
     };
 
@@ -79,7 +79,7 @@ describe("composeQuery", () => {
   test("subject", async () => {
     const subject = new Subject<string>();
     const subjectQuery = {
-      key: getQueryKey() + ":subject",
+      key: `${getQueryKey()}:subject`,
       observable: subject,
     };
 

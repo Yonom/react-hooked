@@ -1,4 +1,4 @@
-import { Observable, Subscribable } from "rxjs";
+import type { Observable, Subscribable } from "rxjs";
 
 export type Query<T> = {
   readonly key: string;
