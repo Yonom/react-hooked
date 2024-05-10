@@ -26,7 +26,7 @@ const ensureRefUndisposed = <T>(state: InternalQueryHookState<T>) => {
   }
 };
 
-const useQueryHookState = <T>(query: Query<T>): QueryHookState<T> => {
+export const useQueryHookState = <T>(query: Query<T>): QueryHookState<T> => {
   const ref = QueryStore.getOrCreate(query);
 
   // reset state when queryRef changes
@@ -64,5 +64,3 @@ const useQueryHookState = <T>(query: Query<T>): QueryHookState<T> => {
 
   return state;
 };
-
-export default useQueryHookState;

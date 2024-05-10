@@ -1,20 +1,21 @@
 import {
-  DocumentData,
-  DocumentReference,
-  DocumentSnapshot,
-  Query as FirestoreQuery,
-  QuerySnapshot,
+  type DocumentData,
+  type DocumentReference,
+  type DocumentSnapshot,
+  type Query as FirestoreQuery,
+  type QuerySnapshot,
   onSnapshot,
   queryEqual,
 } from "@firebase/firestore";
+import {
+  type Query,
+  composeQuery,
+  useSuspenseQuery,
+  readQuery,
+} from "@react-hooked/core";
 import { Observable } from "rxjs";
 
-import readQuery from "@react-hooked/core/observable/helpers/readQuery";
-import useSuspenseQuery from "@react-hooked/core/observable/react/useSuspenseQuery";
-import { Query } from "@react-hooked/core/observable/types";
-import composeQuery from "@react-hooked/core/observable/compose/composeQuery";
-
-const cachedQueries: FirestoreQuery<any>[] = [];
+const cachedQueries: FirestoreQuery<unknown>[] = [];
 
 function getUniqueIdForFirestoreQuery<T = DocumentData>(
   query: FirestoreQuery<T>,

@@ -1,14 +1,12 @@
 import {
-  Auth,
-  User,
+  type Auth,
+  type User,
   onAuthStateChanged,
   signInAnonymously,
 } from "@firebase/auth";
 import { Observable } from "rxjs";
 
-import composeQuery from "@react-hooked/core/observable/compose/composeQuery";
-import useSuspenseQuery from "@react-hooked/core/observable/react/useSuspenseQuery";
-import { Query } from "@react-hooked/core/observable/types";
+import { type Query, composeQuery, useSuspenseQuery } from "@react-hooked/core";
 
 export const authStateQuery = (auth: Auth): Query<User | null> => {
   return {

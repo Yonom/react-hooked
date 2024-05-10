@@ -4,7 +4,7 @@ import { merge, of, throwError } from "rxjs";
 
 import { getQueryKey } from "../../__tests__/test-utils";
 import type { Query } from "../../types";
-import resetQuery from "../resetQuery";
+import { resetQuery } from "../resetQuery";
 import { subscribeToQuery } from "../subscribeToQuery";
 
 // TODO Fix this

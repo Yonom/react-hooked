@@ -1,4 +1,9 @@
 {
+  "compilerOptions": {
+    "paths": {
+      "@react-hooked/core": ["../../packages/core/src"]
+    }
+  },
   "extends": "@react-hooked/tsconfig/base.json",
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

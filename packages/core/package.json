@@ -1,8 +1,31 @@
 {
   "name": "@react-hooked/core",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.3",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
   "scripts": {
+    "build": "tsup",
+    "deploy": "npm publish",
     "test": "jest"
   },
   "dependencies": {
@@ -26,12 +49,25 @@
     "react-error-boundary": "^4.0.13",
     "ts-jest": "^29.1.2"
   },
-  "main": "src/index.ts",
   "jest": {
     "testEnvironment": "jsdom",
     "preset": "ts-jest",
     "testPathIgnorePatterns": [
       "__tests__/test-utils.ts$"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "dts": true,
+    "clean": true
   }
 }

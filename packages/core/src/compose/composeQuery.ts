@@ -6,7 +6,7 @@ import { COMPLETE_TOKEN, type Query } from "../types";
 
 type ComposeReadFunction = <T>(q: Query<T>) => Promise<T>;
 
-type ComposeQueryOptions<T> = Omit<Query<T>, "observable"> & {
+export type ComposeQueryOptions<T> = Omit<Query<T>, "observable"> & {
   render: (context: { read: ComposeReadFunction }) => Promise<T | SkipToken>;
 };
 
@@ -22,9 +22,9 @@ type SubscribeHandle = {
 // TODO how to signal this to existing runs?
 
 export const skipToken = Symbol("skipToken");
-type SkipToken = typeof skipToken;
+export type SkipToken = typeof skipToken;
 
-const composeQuery = <T>(query: ComposeQueryOptions<T>): Query<T> => {
+export const composeQuery = <T>(query: ComposeQueryOptions<T>): Query<T> => {
   const observable = new Observable<T>((subscriber) => {
     let currentVersion = -1;
     let lastEmitVersion = -1;
@@ -109,5 +109,3 @@ const composeQuery = <T>(query: ComposeQueryOptions<T>): Query<T> => {
     observable,
   };
 };
-
-export default composeQuery;

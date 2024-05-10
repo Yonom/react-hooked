@@ -6,7 +6,7 @@ import { delay, mergeMap, of, throwError, timer } from "rxjs";
 
 import { getQueryKey } from "../../__tests__/test-utils";
 import type { Query } from "../../types";
-import useSuspenseQuery from "../useSuspenseQuery";
+import { useSuspenseQuery } from "../useSuspenseQuery";
 
 jest.useFakeTimers();
 

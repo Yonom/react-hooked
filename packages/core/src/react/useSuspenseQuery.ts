@@ -1,9 +1,7 @@
 import { use } from "./react-canary-polyfills";
-import useQuery from "./useQuery";
+import { useQuery } from "./useQuery";
 import type { Query } from "../types";
 
-function useSuspenseQuery<T>(query: Query<T>): T {
+export function useSuspenseQuery<T>(query: Query<T>): T {
   return use(useQuery(query));
 }
-
-export default useSuspenseQuery;

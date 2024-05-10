@@ -1,6 +1,6 @@
 {
   "name": "@react-hooked/firebase",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "exports": {
     ".": {
@@ -25,18 +25,19 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsup",
+    "deploy": "npm publish",
     "test": "jest"
   },
   "dependencies": {
     "@firebase/auth": "^1.7.2",
     "@firebase/firestore": "^4.6.1",
+    "@react-hooked/core": "0.0.3",
     "react": "^18.3.1",
     "rxfire": "^6.0.5",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
-    "@react-hooked/core": "0.0.1",
     "@react-hooked/tsconfig": "*",
     "@stryker-mutator/core": "^8.2.6",
     "@stryker-mutator/jest-runner": "^8.2.6",

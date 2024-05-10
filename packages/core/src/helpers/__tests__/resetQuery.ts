@@ -7,8 +7,8 @@ import {
   expectRejectedResult,
   getQueryKey,
 } from "../../__tests__/test-utils";
-import readQuery from "../readQuery";
-import resetQuery from "../resetQuery";
+import { readQuery } from "../readQuery";
+import { resetQuery } from "../resetQuery";
 import { subscribeToQuery } from "../subscribeToQuery";
 
 // TODO fix this

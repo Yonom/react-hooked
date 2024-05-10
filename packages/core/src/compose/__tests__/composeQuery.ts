@@ -6,8 +6,8 @@ import {
   expectPendingResult,
   getQueryKey,
 } from "../../__tests__/test-utils";
-import readQuery from "../../helpers/readQuery";
-import composeQuery from "../composeQuery";
+import { readQuery } from "../../helpers/readQuery";
+import { composeQuery } from "../composeQuery";
 
 jest.useFakeTimers();
 

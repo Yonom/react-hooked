@@ -9,9 +9,9 @@ import {
   expectFullfilledResult,
   expectRejectedResult,
 } from "../../__tests__/test-utils";
-import resetQuery from "../../helpers/resetQuery";
+import { resetQuery } from "../../helpers/resetQuery";
 import type { Query } from "../../types";
-import useQueryHookState from "../useQueryHookState";
+import { useQueryHookState } from "../useQueryHookState";
 
 jest.useFakeTimers();
 

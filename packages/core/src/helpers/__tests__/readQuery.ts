@@ -6,7 +6,7 @@ import {
   getQueryKey,
 } from "../../__tests__/test-utils";
 import type { Query } from "../../types";
-import readQuery from "../readQuery";
+import { readQuery } from "../readQuery";
 
 const testQuery = (name: string) =>
   ({
