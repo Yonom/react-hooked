@@ -1,0 +1,10 @@
+{
+  "packageManager": "yarn",
+  "reporters": ["html", "progress"],
+  "testRunner": "jest",
+  "coverageAnalysis": "perTest",
+  "plugins": [
+    "@stryker-mutator/jest-runner",
+    "@stryker-mutator/typescript-checker"
+  ]
+}
